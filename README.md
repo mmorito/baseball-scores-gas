@@ -25,10 +25,14 @@
 4. スプレッドシートをリロードすると、タブメニューの 1 番右に「コマンド」というメニューが出現するはず
 
 ### 5. LINE bot の設定
+- もしあなたがチームメンバーの成績を LINE に連携させたい場合、  
+LINE MessagingAPI のリプライ機能を使って、成績をLINEに連携させることができます
 
-- もしあなたがチームメンバーの成績を LINE に連携させたい場合、LINE bot を連携することができます
-- LINE bot を作成して、[LINE MessagingAPI](https://developers.line.biz/ja/services/messaging-api/)の Channel access token を入手してください。
-- あなたは、LINE.gs の `CHANNEL_ACCESS_TOKEN` にトークンを設定することで、LINE のリプライメッセージを使用することができます
+1. LINE bot を作成して、[LINE MessagingAPI](https://developers.line.biz/ja/services/messaging-api/)の Channel access token を入手してください。
+2. 次に、スクリプトエディタのタブメニュー [公開] - [ウェブアプリケーションとして導入...] をクリックし、Webアプリケーションとして公開します
+3. 公開すると発行されるURLを、LINE MessagingAPIのWebhookに設定します
+4. LINE.gs の `CHANNEL_ACCESS_TOKEN` にLINE MessagingAPIのトークンを設定します
+
 
 ## 使い方
 
