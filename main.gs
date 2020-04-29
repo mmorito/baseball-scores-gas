@@ -23,10 +23,10 @@ function calcPersonalScore() {
     for (var i = 1; i <= NUMBER_OF_MATCHS; i++) {
       var sn = i + "試合目";
       var s = ss.getSheetByName(sn);
-      // 野手の1試合分のスコア取得
+      // 1試合分のスコア取得
       var fieldersScore = s.getRange(12, 2, 20, 16).getValues();
       var pitchersScore = s.getRange(42, 2, 10, 20).getValues();
-      // 野州成績を集計
+      // 野手の成績を集計
       for (var k = 0; k < fieldersScore.length; k++) {
         if (name === fieldersScore[k][0]) {
           for (var l = 0; l <= 14; l++) {
@@ -37,7 +37,7 @@ function calcPersonalScore() {
           break;
         }
       }
-      // 投手成績を集計
+      // 投手の成績を集計
       for (var k = 0; k < pitchersScore.length; k++) {
         if (name === pitchersScore[k][0]) {
           for (var l = 0; l <= 18; l++) {
@@ -49,6 +49,7 @@ function calcPersonalScore() {
         }
       }
     }
+    // 画面描画
     if (fielderScore[0].length > 0) {
       sum.getRange(8 + cnt.fielder, 2).setValue(name);
       sum.getRange(8 + cnt.fielder, 3, 1, fielderScore[0].length).setValues(fielderScore);
