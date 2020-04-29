@@ -55,12 +55,6 @@ function chooseResponseMessage(user_message) {
         }
       }
     }
-  } else if (user_message.indexOf('試合数') >= 0) {
-    return '2019年の試合数は16です';
-  } else if (user_message === 'うるさい') {
-    return 'ごめんなさい';
-  } else if (user_message.indexOf('らびっつ') >= 0) {
-    return 'https://teams.one/teams/h-reddogs';
   }
 }
 
@@ -168,12 +162,4 @@ function sendMessage(reply_token, reply_messages) {
     }),
   });
   return ContentService.createTextOutput(JSON.stringify({'content': 'post ok'})).setMimeType(ContentService.MimeType.JSON);
-}
-
-// 動作確認用
-function test() {
-  var name = '成績 せっきん';
-  var aaa = parseUserMessage(name);
-  var t = chooseResponseMessage(aaa);
-  Logger.log(t);
 }
